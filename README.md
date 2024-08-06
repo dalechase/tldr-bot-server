@@ -38,6 +38,8 @@ export PINECONE_API_KEY = <PINECONE_API_KEY>
 
 Add additional llm API keys to the ENV.
 
+To add Llama via Groq:
+
 export GROQ_API_KEY = <GROQ_API_KEY>
 
 
