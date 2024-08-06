@@ -119,6 +119,9 @@ def vectordb_query(input_text: str, username: str, department: str) -> str:
     Returns:
         str: The processed results as a string.
     """
+
+
+
     # Create an embedding for the input text using OpenAI's text-embedding-ada-002 model
     response = openai.embeddings.create(
         input=input_text,
@@ -127,8 +130,15 @@ def vectordb_query(input_text: str, username: str, department: str) -> str:
     query_embedding = response.data[0].embedding
 
     num_results = 5
-    index = pinecone.Index(INDEX_NAME)
 
+    # Handle case where index does not exist
+    try:
+        index = pinecone.Index(INDEX_NAME)
+    except:
+        raise Exception("Index not found")
+    finally:
+        return "Index not found"
+    
     # Create a filter allowing for querying by Username & Department
     metadata_filter = {
         "username": username,
