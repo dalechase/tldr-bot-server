@@ -7,7 +7,7 @@ This app allows users to upload a PDF or Text file and ask an AI questions about
 Things that can be improved:
 
 1. The conversation history is reformated to account for the differences between OpenAI & Llama at each interaction. This should happen once each time the LLM provider is changed.
-2. Add User loggin to allow for controlled access to documents. The contents of uploaded documents would only be available to specific Users or Departments.
+2. Add User login to allow for controlled access to documents. The contents of uploaded documents would only be available to specific Users or Departments.
 3. PDFs and TXT files should be uploaded directly to cloudstorage, then be processed for vector db ingestion.
 4. Add an Admin page for VectorDB file management; listing, deletion.
 
